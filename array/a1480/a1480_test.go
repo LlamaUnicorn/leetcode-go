@@ -1,4 +1,4 @@
-package runningsum
+package a1480
 
 import (
 	"reflect"

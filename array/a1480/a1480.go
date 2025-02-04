@@ -1,4 +1,4 @@
-package runningsum
+package a1480
 
 // RunningSum calculates the running sum of the input array.
 func RunningSum(nums []int) []int {

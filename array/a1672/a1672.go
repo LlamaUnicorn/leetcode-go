@@ -1,8 +1,8 @@
-package main
+package a1672
 
 import "fmt"
 
-func maximumWealth(accounts [][]int) int {
+func MaximumWealth(accounts [][]int) int {
 	maxWealth := 0
 	for account := range accounts { // [[1,5] [7,3] [3,5]]
 		fmt.Println(accounts[account])
@@ -17,9 +17,4 @@ func maximumWealth(accounts [][]int) int {
 		}
 	}
 	return maxWealth
-}
-
-func main() {
-	accounts := [][]int{{1, 5}, {7, 3}, {3, 5}}
-	fmt.Println(maximumWealth(accounts))
 }
