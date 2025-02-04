@@ -1,6 +1,8 @@
 package a1672
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func MaximumWealth(accounts [][]int) int {
 	maxWealth := 0
