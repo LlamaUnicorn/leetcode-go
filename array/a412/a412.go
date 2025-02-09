@@ -1,34 +1,21 @@
 package a412
 
-import (
-	"fmt"
-	"strconv"
-)
+import "strconv"
 
 func FizzBuzz(n int) []string {
-	fmt.Println(n)
 	arr := make([]string, n)
+
 	for i := 1; i <= n; i++ {
-		arr = append(arr, strconv.Itoa(i))
+		switch {
+		case i%3 == 0 && i%5 == 0:
+			arr[i-1] = "FizzBuzz"
+		case i%3 == 0:
+			arr[i-1] = "Fizz"
+		case i%5 == 0:
+			arr[i-1] = "Buzz"
+		default:
+			arr[i-1] = strconv.Itoa(i)
+		}
 	}
-	fmt.Println(arr)
-	//for _, i := range arr {
-	//	switch {
-	//	case i%3 == 0 && i%5 == 0:
-	//		{
-	//			arr[i] = "FizzBuzz"
-	//		}
-	//	case i%3 == 0:
-	//		{
-	//			arr[i] = "Fizz"
-	//		}
-	//	case i%5 == 0:
-	//		{
-	//			arr[i] = "Buzz"
-	//		}
-	//	default:
-	//		arr[i] = strconv.Itoa(i)
-	//	}
-	//}
 	return arr
 }

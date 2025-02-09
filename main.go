@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/LlamaUnicorn/leetcode-go/array/a412"
+	"github.com/LlamaUnicorn/leetcode-go/bit-manipulation/bm1342"
 )
 
 func main() {
-	result := a412.FizzBuzz(5)
+	result := bm1342.NumberOfSteps(14)
 	fmt.Println(result)
 }
