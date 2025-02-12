@@ -10,6 +10,7 @@ type SingleListNode struct {
 	Next *SingleListNode
 }
 func main() {
+
 	FirstNode := SingleListNode{
 		Val: 1,
 		Next: &SingleListNode{SecondNode}
