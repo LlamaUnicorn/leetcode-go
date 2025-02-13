@@ -2,23 +2,52 @@ package main
 
 import (
 	"fmt"
-	"github.com/LlamaUnicorn/leetcode-go/linked-list/ll876"
 )
 
-type SingleListNode struct {
-	Val  int
-	Next *SingleListNode
+type ListNode struct {
+	Value int
+	Next  *ListNode
 }
-func main() {
 
-	FirstNode := SingleListNode{
-		Val: 1,
-		Next: &SingleListNode{SecondNode}
+// LinkedList represents the linked list itself.
+type LinkedList struct {
+	Head *ListNode
+}
+
+// Add appends a new value to the end of the linked list.
+func (list *LinkedList) Add(value int) {
+	newNode := &ListNode{Value: value}
+	if list.Head == nil {
+		list.Head = newNode
+		return
 	}
-	SecondNode := SingleListNode{
-		val: 2,
-		Next: &SingleListNode{}
+	current := list.Head
+	for current.Next != nil {
+		current = current.Next
 	}
-	result := ll876.ListNode{}
-	fmt.Println(result)
+	current.Next = newNode
+}
+
+// Display prints all the elements in the linked list.
+func (list *LinkedList) Display() {
+	current := list.Head
+	elems := 0
+	for current != nil {
+		fmt.Printf("%d -> ", current.Value)
+		current = current.Next
+		elems++
+	}
+
+	fmt.Println("nil")
+	fmt.Println(elems)
+}
+
+func main() {
+	list := &LinkedList{}
+	list.Add(1)
+	list.Add(2)
+	list.Add(3)
+	list.Display()
+	//result := ll876.ListNode{}
+	//fmt.Println(result)
 }
