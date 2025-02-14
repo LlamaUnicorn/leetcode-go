@@ -1,53 +1,60 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
+// Definition for singly-linked list.
 type ListNode struct {
 	Value int
 	Next  *ListNode
 }
 
-// LinkedList represents the linked list itself.
-type LinkedList struct {
-	Head *ListNode
+// Function to find the middle node of the linked list
+func middleNode(head *ListNode) *ListNode {
+	// Initialize slow and fast pointers
+	slow, fast := head, head
+
+	// Traverse the list using the two-pointer technique
+	for fast != nil && fast.Next != nil {
+		slow = slow.Next      // Move slow pointer one step
+		fast = fast.Next.Next // Move fast pointer two steps
+	}
+
+	// When fast reaches the end, slow will be at the middle
+	return slow
 }
 
-// Add appends a new value to the end of the linked list.
-func (list *LinkedList) Add(value int) {
-	newNode := &ListNode{Value: value}
-	if list.Head == nil {
-		list.Head = newNode
-		return
+// Helper function to create a linked list from a slice of integers
+func createLinkedList(values []int) *ListNode {
+	if len(values) == 0 {
+		return nil
 	}
-	current := list.Head
-	for current.Next != nil {
+	head := &ListNode{Value: values[0]}
+	current := head
+	for i := 1; i < len(values); i++ {
+		current.Next = &ListNode{Value: values[i]}
 		current = current.Next
 	}
-	current.Next = newNode
+	return head
 }
 
-// Display prints all the elements in the linked list.
-func (list *LinkedList) Display() {
-	current := list.Head
-	elems := 0
+// Helper function to print a linked list
+func printLinkedList(head *ListNode) {
+	current := head
 	for current != nil {
-		fmt.Printf("%d -> ", current.Value)
+		fmt.Printf("%d ", current.Value)
 		current = current.Next
-		elems++
 	}
-
-	fmt.Println("nil")
-	fmt.Println(elems)
+	fmt.Println()
 }
 
 func main() {
-	list := &LinkedList{}
-	list.Add(1)
-	list.Add(2)
-	list.Add(3)
-	list.Display()
-	//result := ll876.ListNode{}
-	//fmt.Println(result)
+	// Example 1: [1, 2, 3, 4, 5]
+	head1 := createLinkedList([]int{1, 2, 3, 4, 5})
+	fmt.Print("Middle of [1, 2, 3, 4, 5]: ")
+	printLinkedList(middleNode(head1)) // Output: [3, 4, 5]
+
+	// Example 2: [1, 2, 3, 4, 5, 6]
+	head2 := createLinkedList([]int{1, 2, 3, 4, 5, 6})
+	fmt.Print("Middle of [1, 2, 3, 4, 5, 6]: ")
+	printLinkedList(middleNode(head2)) // Output: [4, 5, 6]
 }
