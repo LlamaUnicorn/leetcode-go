@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	mco.MaxConsecutiveOnes()
+	mco.MaxConsecutiveOnes(mco.Nums)
 }
