@@ -1,4 +1,4 @@
-package main
+package even_number_of_digits
 
 import "fmt"
 
@@ -10,7 +10,4 @@ func findNumbers(nums []int) int {
 		fmt.Println(nums[i])
 	}
 	return len(nums)
-}
-func main() {
-	findNumbers(nums)
 }
