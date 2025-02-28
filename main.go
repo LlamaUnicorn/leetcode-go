@@ -4,25 +4,15 @@ import (
 	"fmt"
 )
 
-var nums = []int{-4, -1, 0, 3, 10}
+var arr = []int{1, 0, 2, 3, 0, 4, 5, 0} // [1,0,0,2,3,0,0,4]
 
-func sortedSquares(nums []int) []int {
-	n := len(nums)
-	result := make([]int, n)
-	pos := n - 1
-	for left, right := 0, n-1; left <= right; {
-		if nums[left]*nums[left] >= nums[right]*nums[right] {
-			result[pos] = nums[left] * nums[left]
-			left++
-		} else {
-			result[pos] = nums[right] * nums[right]
-			right--
-		}
-		pos--
+func duplicateZeros(arr []int) {
+	//fmt.Println(arr)
+	for _, elem := range arr {
+		fmt.Println(elem)
 	}
-	fmt.Println(result)
-	return result
 }
+
 func main() {
-	sortedSquares(nums)
+	duplicateZeros(arr)
 }
