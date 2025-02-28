@@ -1,19 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 var nums = []int{-4, -1, 0, 3, 10}
 
 func sortedSquares(nums []int) []int {
-	var result []int
-	for i, j := 0, len(nums); i != j; {
-		if nums[i]*nums[i] >= nums[j]*nums[j] {
-			result = append(result, nums[i])
-			i++
+	n := len(nums)
+	result := make([]int, n)
+	pos := n - 1
+	for left, right := 0, n-1; left <= right; {
+		if nums[left]*nums[left] >= nums[right]*nums[right] {
+			result[pos] = nums[left] * nums[left]
+			left++
 		} else {
-			result = append(result, nums[j])
-			j--
+			result[pos] = nums[right] * nums[right]
+			right--
 		}
+		pos--
 	}
 	fmt.Println(result)
 	return result
