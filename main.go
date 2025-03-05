@@ -1,33 +1,25 @@
 package main
 
-var arr = []int{1, 0, 2, 3, 0, 4, 5, 0} // [1,0,0,2,3,0,0,4]
+import "fmt"
 
 func main() {
-	duplicateZeros(arr)
+	merge(nums1, 3, nums2, 3)
 }
 
-func duplicateZeros(arr []int) {
-	zeroes := 0
+var nums1 = []int{1, 2, 3, 0, 0, 0}
+var m = 3
 
-	for _, v := range arr {
-		if v == 0 {
-			zeroes++
+var nums2 = []int{2, 5, 6}
+var n = 3
+
+func merge(nums1 []int, m int, nums2 []int, n int) {
+	idx := len(nums1) - 1
+	//fmt.Println(idx)
+	for i := idx; i >= 0; i-- {
+		fmt.Println(nums1[i])
+		if nums1[i] != 0 {
+			fmt.Println(nums1[i])
 		}
 	}
-
-	for i := len(arr) - 1; i >= 0; i-- {
-		if arr[i] == 0 {
-			if zeroes+i < len(arr) {
-				arr[zeroes+i] = 0
-			}
-
-			if zeroes-1+i < len(arr) {
-				arr[zeroes-1+i] = 0
-			}
-
-			zeroes--
-		} else if i+zeroes < len(arr) {
-			arr[zeroes+i] = arr[i]
-		}
-	}
+	fmt.Println(nums1, nums2)
 }
