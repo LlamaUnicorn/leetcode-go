@@ -14,6 +14,8 @@ var n = 3
 
 func merge(nums1 []int, m int, nums2 []int, n int) {
 	idx := len(nums1) - 1
+	//num1Index := m-1
+	//num2Index := n-1
 	//fmt.Println(idx)
 	for i := idx; i >= 0; i-- {
 		fmt.Println(nums1[i])
