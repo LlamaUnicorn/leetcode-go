@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 	merge(nums1, m, nums2, n)
 }
@@ -25,26 +23,24 @@ var n = 3
 //var n = 1
 
 func merge(nums1 []int, m int, nums2 []int, n int) {
-	idx := 0
-	if m == 0 {
-		idx = len(nums2) - 1
-	} else {
-		idx = len(nums1) - 1
-	}
-	fmt.Println(idx, m)
-	num1Index := m
-	num2Index := n
-	for i := idx; i >= 0; i-- {
-		fmt.Println("for", nums1[i])
-		if nums1[num1Index] >= nums2[num2Index] {
-			nums1[i] = nums1[num1Index]
-			num1Index--
-			fmt.Println("if", nums1, num1Index)
+	p1 := m - 1
+	p2 := n - 1
+	p := m + n - 1
+
+	for p1 >= 0 && p2 >= 0 {
+		if nums1[p1] > nums2[p2] {
+			nums1[p] = nums1[p1]
+			p1--
 		} else {
-			nums1[i] = nums2[num2Index]
-			num2Index--
-			fmt.Println("else", nums1, num2Index)
+			nums1[p] = nums2[p2]
+			p2--
 		}
+		p--
 	}
-	fmt.Println(nums1, nums2)
+
+	for p2 >= 0 {
+		nums1[p] = nums2[p2]
+		p2--
+		p--
+	}
 }
