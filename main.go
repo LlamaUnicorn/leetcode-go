@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 var nums = []int{3, 2, 2, 3}
 var val = 3
 
@@ -13,6 +11,15 @@ func main() {
 //Output: 2, nums = [2,2,_,_]
 
 func removeElement(nums []int, val int) int {
-	fmt.Println(nums, val)
-	return 1
+	ptr := 0
+	for i := 0; i < len(nums)-1; i++ {
+		if nums[i] == val {
+			continue
+		} else {
+			nums[ptr] = nums[i]
+			ptr++
+		}
+	}
+	nums = nums[0 : len(nums)-ptr]
+	return ptr
 }
