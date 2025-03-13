@@ -1,6 +1,9 @@
 package main
 
-var nums = []int{3, 2, 2, 3}
+//var nums = []int{3, 2, 2, 3}
+//var val = 3
+
+var nums = []int{2} //[2]
 var val = 3
 
 func main() {
