@@ -2,28 +2,23 @@ package main
 
 import "fmt"
 
-var nums = []int{3, 2, 2, 3}
-var val = 3
+// Input: nums = [1,1,2]
+// Output: 2, nums = [1,2,_]
+var nums = []int{1, 1, 2}
 
-//Input: nums = [3,2,2,3], val = 3
-//Output: 2, nums = [2,2,_,_]
+//Input: nums = [0,0,1,1,1,2,2,3,3,4]
+//Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+//nums := []int{0,0,1,1,1,2,2,3,3,4}
 
-//var nums = []int{2} //[2]
-//var val = 3
-
-func main() {
-	removeElement(nums, val)
+func removeDuplicates(nums []int) int {
+	ptr := 0
+	uniquePtr := 0
+	for i := 0; i < len(nums); i++ {
+		fmt.Println(i, ptr, uniquePtr)
+	}
+	return 0
 }
 
-func removeElement(nums []int, val int) int {
-	ptr := 0
-	for i := 0; i < len(nums); i++ {
-		if nums[i] != val {
-			nums[ptr] = nums[i]
-			ptr++
-		}
-	}
-	//nums = nums[0 : len(nums)-ptr]
-	fmt.Println(nums)
-	return ptr
+func main() {
+	removeDuplicates(nums)
 }
