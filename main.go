@@ -22,22 +22,20 @@ func removeDuplicates(nums []int) int {
 	for i := 0; i < len(nums); i++ {
 		if i == 0 {
 			continue
-		}
-		if i != 0 && nums[i-1] == nums[i] {
+		} else if nums[i-1] == nums[i] {
 			uniqueCtr++
 			if uniqueCtr == 1 {
 				ptr++
 			}
 			continue
+		} else {
+			nums[ptr] = nums[i]
+			uniqueCtr = 0
 		}
-
-		nums[ptr] = nums[i]
-		ptr++
-		uniqueCtr = 0
 
 		fmt.Println(i, ptr, nums[i])
 	}
-	fmt.Println(nums)
+	fmt.Println(nums, ptr)
 	return ptr
 }
 
