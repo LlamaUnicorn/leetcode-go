@@ -32,7 +32,6 @@ func removeDuplicates(nums []int) int {
 			nums[ptr] = nums[i]
 			uniqueCtr = 0
 		}
-
 		fmt.Println(i, ptr, nums[i])
 	}
 	fmt.Println(nums, ptr)
