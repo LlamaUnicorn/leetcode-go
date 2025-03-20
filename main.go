@@ -1,37 +1,25 @@
 package main
 
-import "fmt"
+//Given an array arr of integers, check if there exist two indices i and j such that :
 
-// Input: nums = [1,1,2]
-// Output: 2, nums = [1,2,_]
-//var nums = []int{1, 1, 2}
+// i != j
+// 0 <= i, j < arr.length
+// arr[i] == 2 * arr[j]
+//
+// Input: arr = [10,2,5,3]
+// Output: true
+// Explanation: For i = 0 and j = 2, arr[i] == 10 == 2 * 5 == 2 * arr[j]
+var arr = []int{10, 2, 5, 3}
 
-//Input: nums = [0,0,1,1,1,2,2,3,3,4]
-//Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
-//nums := []int{0,0,1,1,1,2,2,3,3,4}
+//Input: arr = [3,1,7,11]
+//Output: false
+//Explanation: There is no i and j that satisfy the conditions.
+//var arr = []int{3,1,7,11}
 
-//Input: [0,0,1,1,1,2,2,3,3,4]
-//Output: [0,1,1,2,1,3,2,4]
-//Expected: [0,1,2,3,4]
-
-var nums = []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}
-
-func removeDuplicates(nums []int) int {
-	ptr := 1
-	for i := 0; i < len(nums); i++ {
-		if i == 0 {
-			continue
-		} else if nums[i-1] == nums[i] {
-			continue
-		} else {
-			nums[ptr] = nums[i]
-			ptr++
-		}
-	}
-	fmt.Println(nums, ptr)
-	return ptr
+func checkIfExist(arr []int) bool {
+	return true
 }
 
 func main() {
-	removeDuplicates(nums)
+	checkIfExist(nums)
 }
