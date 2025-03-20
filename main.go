@@ -17,22 +17,16 @@ import "fmt"
 var nums = []int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}
 
 func removeDuplicates(nums []int) int {
-	ptr := 0
-	uniqueCtr := 0
+	ptr := 1
 	for i := 0; i < len(nums); i++ {
 		if i == 0 {
 			continue
 		} else if nums[i-1] == nums[i] {
-			uniqueCtr++
-			if uniqueCtr == 1 {
-				ptr++
-			}
 			continue
 		} else {
 			nums[ptr] = nums[i]
-			uniqueCtr = 0
+			ptr++
 		}
-		fmt.Println(i, ptr, nums[i])
 	}
 	fmt.Println(nums, ptr)
 	return ptr
