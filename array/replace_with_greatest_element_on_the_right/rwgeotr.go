@@ -28,3 +28,7 @@ package replace_with_greatest_element_on_the_right
 //Loop through the array starting from the end.
 //Hide Hint #2
 //Keep the maximum value seen so far.
+
+func replaceElements(arr []int) []int {
+	return []int{1}
+}
