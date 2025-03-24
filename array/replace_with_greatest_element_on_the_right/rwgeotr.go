@@ -29,6 +29,20 @@ package replace_with_greatest_element_on_the_right
 //Hide Hint #2
 //Keep the maximum value seen so far.
 
+var arr = []int{17, 18, 5, 4, 6, 1}
+
 func replaceElements(arr []int) []int {
-	return []int{1}
+	cur, max := 0, 0
+	for i := len(arr) - 1; i >= 0; i-- {
+		cur = arr[i]
+		arr[i] = max
+		if cur > max {
+			max = cur
+		}
+		if i == len(arr)-1 {
+			arr[i] = -1
+			continue
+		}
+	}
+	return arr
 }
