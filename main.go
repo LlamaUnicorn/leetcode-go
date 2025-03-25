@@ -2,17 +2,13 @@ package main
 
 import "fmt"
 
-var nums = []int{0, 1, 0, 3, 12}
+var nums = []int{3, 1, 2, 4} // [2,4,3,1]
+//var nums = []int{0}  // [0]
 
-//Output: [1,3,12,0,0]
-
-//nums = [0]
-//Output: [0]
-
-func moveZeroes(nums []int) {
-
+func sortArrayByParity(nums []int) []int {
+	return nums
 }
 
 func main() {
-	fmt.Println(moveZeroes(nums))
+	fmt.Println(sortArrayByParity(nums))
 }

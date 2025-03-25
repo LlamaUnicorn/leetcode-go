@@ -28,5 +28,24 @@ package move_zeroes
 //Hide Hint #2
 //A two-pointer approach could be helpful here. The idea would be to have one pointer for iterating the array and another pointer that just works on the non-zero elements of the array.
 
+// var nums = []int{0, 1, 0, 3, 12}
+var nums = []int{1}
+
+//Output: [1,3,12,0,0]
+
+//nums = [0]
+//Output: [0]
+
 func moveZeroes(nums []int) {
+	ptr := 0
+	for i := 0; i < len(nums); i++ {
+		if nums[i] == 0 {
+			continue
+		}
+		nums[ptr] = nums[i]
+		if i != ptr {
+			nums[i] = 0
+		}
+		ptr++
+	}
 }
