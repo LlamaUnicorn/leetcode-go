@@ -2,22 +2,14 @@ package main
 
 import "fmt"
 
-var nums = []int{2}
-var val = 3
+var heights = []int{1, 1, 4, 2, 1, 3} // 3
+//var heights = []int{5, 1, 2, 3, 4} // 5
+//var heights = []int{1,2,3,4,5} // 0
 
-//[2]
-
-func removeElement(nums []int, val int) int {
-	ptr := 0
-	for i := 0; i < len(nums); i++ {
-		if nums[i] != val {
-			nums[ptr] = nums[i]
-			ptr++
-		}
-	}
-	return ptr
+func heightChecker(heights []int) int {
+	return 0
 }
 
 func main() {
-	fmt.Println(removeElement(nums, val))
+	fmt.Println(heightChecker(heights))
 }
