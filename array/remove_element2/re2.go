@@ -1,6 +1,7 @@
-package main
+package remove_element2
 
-import "fmt"
+//var nums = []int{3, 2, 2, 3}
+//var val = 3
 
 var nums = []int{2}
 var val = 3
@@ -16,8 +17,4 @@ func removeElement(nums []int, val int) int {
 		}
 	}
 	return ptr
-}
-
-func main() {
-	fmt.Println(removeElement(nums, val))
 }
