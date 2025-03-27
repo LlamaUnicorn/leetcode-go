@@ -7,7 +7,23 @@ var heights = []int{1, 1, 4, 2, 1, 3} // 3
 //var heights = []int{1,2,3,4,5} // 0
 
 func heightChecker(heights []int) int {
-	return 0
+	res := []int{}
+	for i := 0; i < len(heights); i++ {
+		if i == 0 || heights[i] >= heights[i-1] {
+			res[i] = heights[i]
+		} else {
+			for j := i; heights[i] < res[j-1]; j-- {
+				res[j-1], res[j] = heights[i], res[j-1]
+			}
+		}
+	}
+	ctr := 0
+	for i := 0; i < len(heights); i++ {
+		if heights[i] != res[i] {
+			ctr++
+		}
+	}
+	return ctr
 }
 
 func main() {
