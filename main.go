@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 // var heights = []int{1, 1, 4, 2, 1, 3} // 3
-var heights = []int{5, 1, 2, 3, 4} // 5  index out of range
-//var heights = []int{1,2,3,4,5} // 0
+// var heights = []int{5, 1, 2, 3, 4} // 5
+var heights = []int{1, 2, 3, 4, 5} // 0
 
 func heightChecker(heights []int) int {
 	res := make([]int, len(heights))
@@ -15,6 +15,9 @@ func heightChecker(heights []int) int {
 		} else {
 			for j := i; heights[i] < res[j-1]; j-- {
 				res[j-1], res[j] = heights[i], res[j-1]
+				if j-1 == 0 {
+					break
+				}
 			}
 		}
 	}
