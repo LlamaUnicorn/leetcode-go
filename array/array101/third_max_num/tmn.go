@@ -40,6 +40,7 @@ package third_max_num
 // var nums = []int{3,2,1} // 1
 var nums = []int{1, 2} // 2
 
+// main() {
 //fmt.Println(thirdMax([]int{3, 2, 1}))    // Output: 1
 //fmt.Println(thirdMax([]int{1, 2}))       // Output: 2
 //fmt.Println(thirdMax([]int{2, 2, 3, 1})) // Output: 1
