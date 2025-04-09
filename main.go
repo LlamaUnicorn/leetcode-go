@@ -15,7 +15,7 @@ func findDisappearedNumbers(nums []int) []int {
 			nums[index] = -nums[index]
 		}
 	}
-
+	fmt.Println(nums)
 	result := []int{}
 	for i := 0; i < len(nums); i++ {
 		if nums[i] > 0 {
