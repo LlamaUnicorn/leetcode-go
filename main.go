@@ -35,5 +35,6 @@ func abs(x int) int {
 func main() {
 	//fmt.Println(findDisappearedNumbers([]int{4, 3, 2, 7, 8, 2, 3, 1}))        // Output: [5,6]
 	//fmt.Println(findDisappearedNumbers([]int{1, 1}))                          // Output: [2]
-	fmt.Println(findDisappearedNumbers([]int{5, 4, 6, 7, 9, 3, 10, 9, 5, 6})) // Output: [1, 2, 8]
+	fmt.Println(findDisappearedNumbers([]int{4, 4, 4, 4})) // Output: [2]
+	//fmt.Println(findDisappearedNumbers([]int{5, 4, 6, 7, 9, 3, 10, 9, 5, 6})) // Output: [1, 2, 8]
 }
