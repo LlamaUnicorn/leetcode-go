@@ -3,7 +3,24 @@ package main
 import "fmt"
 
 func pivotIndex(nums []int) int {
-	return 0
+	leftSum := 0
+	rightSum := 0
+	for i := 0; i < len(nums); i++ {
+		leftSum = 0
+		rightSum = 0
+		for j := 0; j < len(nums); j++ {
+			if j < i {
+				leftSum += nums[j]
+			}
+			if j > i {
+				rightSum += nums[j]
+			}
+		}
+		if leftSum == rightSum {
+			return i
+		}
+	}
+	return -1
 }
 
 func main() {
