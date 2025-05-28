@@ -2,24 +2,12 @@ package main
 
 import "fmt"
 
-func dominantIndex(nums []int) int {
-	maxValue, maxIndex := 0, 0
-	for i := 0; i < len(nums); i++ {
-		if nums[i] > maxValue {
-			maxValue = nums[i]
-			maxIndex = i
-		}
-	}
-	for i := 0; i < len(nums); i++ {
-		if maxValue < 2*nums[i] && maxValue != nums[i] {
-			return -1
-		}
-	}
-	return maxIndex
+func plusOne(digits []int) []int {
+	return []int{1}
 }
 
 func main() {
-	fmt.Println(dominantIndex([]int{3, 6, 1, 0})) // Output: 1
-	fmt.Println(dominantIndex([]int{1, 2, 3, 4})) // Output: -1
-	fmt.Println(dominantIndex([]int{0, 0, 3, 2})) // Output: -1
+	fmt.Println(plusOne([]int{1, 2, 3}))    // Output: [1,2,4]
+	fmt.Println(plusOne([]int{4, 3, 2, 1})) // Output: [4,3,2,2]
+	fmt.Println(plusOne([]int{9}))          // Output: [1,0]
 }
