@@ -2,63 +2,30 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
-func addBinary(a string, b string) string {
-	var result strings.Builder
-	carry := 0
-	i, j := len(a)-1, len(b)-1
-
-	// Process from right to left
-	for i >= 0 || j >= 0 || carry > 0 {
-		sum := carry
-
-		if i >= 0 {
-			sum += int(a[i] - '0')
-			i--
-		}
-
-		if j >= 0 {
-			sum += int(b[j] - '0')
-			j--
-		}
-
-		result.WriteByte(byte(sum%2) + '0')
-		carry = sum / 2
+func strStr(haystack string, needle string) int {
+	n := len(needle)
+	if n == 0 {
+		return 0
 	}
 
-	// Reverse the result since we built it backwards
-	s := result.String()
-	runes := []rune(s)
-	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
-		runes[i], runes[j] = runes[j], runes[i]
+	h := len(haystack)
+	if h < n {
+		return -1
 	}
 
-	return string(runes)
+	for i := 0; i <= h-n; i++ {
+		if haystack[i:i+n] == needle {
+			return i
+		}
+	}
+
+	return -1
 }
 
 func main() {
 	// Test cases
-	fmt.Println(addBinary("11", "1"))      // "100"
-	fmt.Println(addBinary("1010", "1011")) // "10101"
+	fmt.Println(strStr("sadbutsad", "sad"))  // 0
+	fmt.Println(strStr("leetcode", "leeto")) // -1
 }
-
-// initiate sum
-// if both are ones:
-// save 0
-// sum = 1
-// iterate over the next, keeping the sum
-
-//func addBinary(a string, b string) string {
-//	for i := len(a) - 1; i >= 0; i-- {
-//		fmt.Printf("a[%d] %c\n", i, a[i])
-//		//fmt.Print(b[i])
-//	}
-//	return a + b
-//}
-//
-//func main() {
-//	fmt.Println(addBinary("11", "1")) // Output: 100
-//	//fmt.Println(addBinary("1010", "1011")) // Output: 10101
-//}
