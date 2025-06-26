@@ -80,7 +80,6 @@ func commonPrefix(a, b string) string {
 }
 
 func main() {
-	// Test cases
 	fmt.Println(longestCommonPrefix([]string{"flower", "flow", "flight"})) // "fl"
 	fmt.Println(longestCommonPrefix([]string{"dog", "racecar", "car"}))    // ""
 }
