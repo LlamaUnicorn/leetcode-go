@@ -23,6 +23,64 @@ package longest_common_prefix
 //0 <= strs[i].length <= 200
 //strs[i] consists of only lowercase English letters if it is non-empty.
 
+import (
+	"fmt"
+	//"strings"
+)
+
+//Use builtin function
+
+//func longestCommonPrefix(strs []string) string {
+//	if len(strs) == 0 {
+//		return ""
+//	}
+//
+//	prefix := strs[0]
+//	for _, word := range strs[1:] {
+//		for !strings.HasPrefix(word, prefix) {
+//			if len(prefix) == 0 {
+//				return ""
+//			}
+//			prefix = prefix[:len(prefix)-1]
+//		}
+//	}
+//
+//	return prefix
+//}
+
+// No built in functions
 func longestCommonPrefix(strs []string) string {
-	return ""
+	if len(strs) == 0 {
+		return ""
+	}
+
+	prefix := strs[0]
+	for _, word := range strs[1:] {
+		prefix = commonPrefix(prefix, word)
+		if prefix == "" {
+			return ""
+		}
+	}
+
+	return prefix
+}
+
+func commonPrefix(a, b string) string {
+	minLen := len(a)
+	if len(b) < minLen {
+		minLen = len(b)
+	}
+
+	i := 0
+	for i < minLen && a[i] == b[i] {
+		i++
+	}
+
+	return a[:i]
+}
+
+func main() {
+	// Test cases
+	fmt.Println(longestCommonPrefix([]string{"flower", "flow", "flight"})) // "fl"
+	fmt.Println(longestCommonPrefix([]string{"dog", "racecar", "car"}))    // ""
 }
