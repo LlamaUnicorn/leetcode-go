@@ -4,16 +4,13 @@ import (
 	"fmt"
 )
 
-func reverseString(s []string) {
-	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
-		s[i], s[j] = s[j], s[i]
-	}
+func twoSum(numbers []int, target int) []int {
+	return nil
 }
 
 func main() {
 	// Test cases
-	strings := []string{"h", "e", "l", "l", "o"}
-	reverseString([]string{"h", "e", "l", "l", "o"}) // ["o","l","l","e","h"]
-	fmt.Println(strings)                             // ["o","l","l","e","h"]
-	//fmt.Println(reverseString([]string{"H", "a", "n", "n", "a", "h"})) // ["h","a","n","n","a","H"]
+	fmt.Println(twoSum([]int{2, 7, 11, 15}, 9)) // [1,2]
+	fmt.Println(twoSum([]int{2, 3, 4}, 6))      // [1,3]
+	fmt.Println(twoSum([]int{-1, 0}, -1))       // [1,2]
 }
