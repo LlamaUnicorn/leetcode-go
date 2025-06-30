@@ -35,6 +35,20 @@ package two_sum
 //-1000 <= target <= 1000
 //The tests are generated such that there is exactly one solution.
 
-//func twoSum(numbers []int, target int) []int {
-//
+func twoSum(numbers []int, target int) []int {
+	for i := 0; i < len(numbers); i++ {
+		for j := i + 1; j < len(numbers); j++ {
+			if numbers[i]+numbers[j] == target {
+				return []int{i + 1, j + 1}
+			}
+		}
+	}
+	return []int{}
+}
+
+//func main() {
+//	// Test cases
+//	fmt.Println(twoSum([]int{2, 7, 11, 15}, 9)) // [1,2]
+//	fmt.Println(twoSum([]int{2, 3, 4}, 6))      // [1,3]
+//	fmt.Println(twoSum([]int{-1, 0}, -1))       // [1,2]
 //}
