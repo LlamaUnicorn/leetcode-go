@@ -5,14 +5,29 @@ import (
 )
 
 func rotate(nums []int, k int) {
+	n := len(nums)
+	k = k % n
+	reverse(nums, 0, n-1)
+	reverse(nums, 0, k-1)
+	reverse(nums, k, n-1)
+}
 
+func reverse(nums []int, left, right int) {
+	for left < right {
+		nums[left], nums[right] = nums[right], nums[left]
+		left++
+		right--
+	}
 }
 
 func main() {
 	// Test cases
 	arr := []int{1, 2, 3, 4, 5, 6, 7}
-	rotate([]int{1, 2, 3, 4, 5, 6, 7}, 3)
+	rotate(arr, 3)
 	//rotate([]int{-1, -100, 3, 99}, 2)
 	fmt.Println(arr) // [5,6,7,1,2,3,4]
 	//fmt.Println(arr) // [3,99,-1,-100]
 }
+
+//Input: nums = [1,2,3,4,5,6,7], k = 3
+//Output: [5,6,7,1,2,3,4]

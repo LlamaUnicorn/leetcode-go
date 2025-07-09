@@ -42,5 +42,26 @@ package rotate_array
 //The other line of thought is a tad bit complicated but essentially it builds on the idea of placing each element in its original position while keeping track of the element originally in that position. Basically, at every step, we place an element in its rightful position and keep track of the element already there or the one being overwritten in an additional variable. We can't do this in one linear pass and the idea here is based on cyclic-dependencies between elements.
 
 func rotate(nums []int, k int) {
-
+	n := len(nums)
+	k = k % n
+	reverse(nums, 0, n-1)
+	reverse(nums, 0, k-1)
+	reverse(nums, k, n-1)
 }
+
+func reverse(nums []int, left, right int) {
+	for left < right {
+		nums[left], nums[right] = nums[right], nums[left]
+		left++
+		right--
+	}
+}
+
+//func main() {
+//	// Test cases
+//	arr := []int{1, 2, 3, 4, 5, 6, 7}
+//	rotate(arr, 3)
+//	//rotate([]int{-1, -100, 3, 99}, 2)
+//	fmt.Println(arr) // [5,6,7,1,2,3,4]
+//	//fmt.Println(arr) // [3,99,-1,-100]
+//}
