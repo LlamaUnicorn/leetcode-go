@@ -1,4 +1,3 @@
-package design_hashset
 
 // https://leetcode.com/explore/learn/card/hash-table/182/practical-applications/1139/
 // Design a HashSet without using any built-in hash table libraries.
@@ -33,22 +32,25 @@ package design_hashset
 // 0 <= key <= 106
 // At most 104 calls will be made to add, remove, and contains.
 type MyHashSet struct {
+	present []bool
 }
 
 func Constructor() MyHashSet {
-
+	return MyHashSet{
+		present: make([]bool, 1_000_001)
+}
 }
 
 func (this *MyHashSet) Add(key int) {
-
+	this.present[key] = true
 }
 
 func (this *MyHashSet) Remove(key int) {
-
+	this.present[key] = false
 }
 
 func (this *MyHashSet) Contains(key int) bool {
-
+	return this[key]
 }
 
 /**
