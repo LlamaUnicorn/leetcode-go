@@ -1,4 +1,4 @@
-
+package design_hashset
 // https://leetcode.com/explore/learn/card/hash-table/182/practical-applications/1139/
 // Design a HashSet without using any built-in hash table libraries.
 //
@@ -50,7 +50,7 @@ func (this *MyHashSet) Remove(key int) {
 }
 
 func (this *MyHashSet) Contains(key int) bool {
-	return this[key]
+	return this.present[key]
 }
 
 /**
