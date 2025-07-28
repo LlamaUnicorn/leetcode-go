@@ -8,7 +8,7 @@ type MyHashSet struct {
 }
 
 func Constructor() MyHashSet {
-
+	return MyHashSet{}
 }
 
 func (this *MyHashSet) Add(key int) {
@@ -20,7 +20,7 @@ func (this *MyHashSet) Remove(key int) {
 }
 
 func (this *MyHashSet) Contains(key int) bool {
-
+	return false
 }
 
 /**
@@ -32,7 +32,8 @@ func (this *MyHashSet) Contains(key int) bool {
  */
 func main() {
 	// Test cases
-	fmt.Println(reverseWords("the sky is blue"))  // blue is sky the
-	fmt.Println(reverseWords("  hello world  "))  // world hello
-	fmt.Println(reverseWords("a good   example")) // example good a
+	//fmt.Println(reverseWords("the sky is blue"))  // blue is sky the
+	//fmt.Println(reverseWords("  hello world  "))  // world hello
+	//fmt.Println(reverseWords("a good   example")) // example good a
+	fmt.Println("hey")
 }
