@@ -5,35 +5,37 @@ import (
 )
 
 type MyHashSet struct {
+	present []bool
 }
 
 func Constructor() MyHashSet {
-	return MyHashSet{}
+	return MyHashSet{
+		present: make([]bool, 1_000_001),
+	}
 }
 
 func (this *MyHashSet) Add(key int) {
-
+	this.present[key] = true
 }
 
 func (this *MyHashSet) Remove(key int) {
-
+	this.present[key] = false
 }
 
 func (this *MyHashSet) Contains(key int) bool {
-	return false
+	return this.present[key]
 }
 
-/**
- * Your MyHashSet object will be instantiated and called as such:
- * obj := Constructor();
- * obj.Add(key);
- * obj.Remove(key);
- * param_3 := obj.Contains(key);
- */
 func main() {
 	// Test cases
-	//fmt.Println(reverseWords("the sky is blue"))  // blue is sky the
-	//fmt.Println(reverseWords("  hello world  "))  // world hello
-	//fmt.Println(reverseWords("a good   example")) // example good a
-	fmt.Println("hey")
+	obj := Constructor()
+	obj.Add(1)
+	obj.Add(2)
+	fmt.Println(obj.Contains(1))
+	fmt.Println(obj.Contains(3))
+	obj.Add(2)
+	fmt.Println(obj.Contains(2))
+	obj.Remove(2)
+	obj.Contains(2)
+	fmt.Println(obj.Contains(2))
 }

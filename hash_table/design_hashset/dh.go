@@ -1,4 +1,5 @@
 package design_hashset
+
 // https://leetcode.com/explore/learn/card/hash-table/182/practical-applications/1139/
 // Design a HashSet without using any built-in hash table libraries.
 //
@@ -37,8 +38,8 @@ type MyHashSet struct {
 
 func Constructor() MyHashSet {
 	return MyHashSet{
-		present: make([]bool, 1_000_001)
-}
+		present: make([]bool, 1_000_001),
+	}
 }
 
 func (this *MyHashSet) Add(key int) {
