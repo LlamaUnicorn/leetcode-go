@@ -4,27 +4,32 @@ import (
 	"fmt"
 )
 
-type MyHashSet struct {
-	present []bool
+type MyHashMap struct {
 }
 
-func Constructor() MyHashSet {
-	return MyHashSet{
-		present: make([]bool, 1_000_001),
-	}
+func Constructor() MyHashMap {
+
 }
 
-func (this *MyHashSet) Add(key int) {
-	this.present[key] = true
+func (this *MyHashMap) Put(key int, value int) {
+
 }
 
-func (this *MyHashSet) Remove(key int) {
-	this.present[key] = false
+func (this *MyHashMap) Get(key int) int {
+
 }
 
-func (this *MyHashSet) Contains(key int) bool {
-	return this.present[key]
+func (this *MyHashMap) Remove(key int) {
+
 }
+
+/**
+ * Your MyHashMap object will be instantiated and called as such:
+ * obj := Constructor();
+ * obj.Put(key,value);
+ * param_2 := obj.Get(key);
+ * obj.Remove(key);
+ */
 
 func main() {
 	// Test cases
