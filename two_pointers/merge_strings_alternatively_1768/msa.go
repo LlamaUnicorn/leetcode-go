@@ -1,35 +1,7 @@
-package main
+package merge_strings_alternatively_1768
 
-import (
-	"fmt"
-	"strings"
-)
-
-func mergeAlternately(word1 string, word2 string) string {
-	// set two pointers equal to the len(word1) and len(word2)
-	// loop over word1 and word2 incrementing pointers
-	// append selected characters to the result (use buffer for write in the end)
-	//
-	len1, len2 := len(word1), len(word2)
-	var sb strings.Builder
-
-	for i := 0; i < len1; i++ {
-		sb.WriteString(string(word1[i]))
-		for j := 0; j < len2; j++ {
-			sb.WriteString(string(word2[j]))
-		}
-	}
-	fmt.Println(sb.String())
-	result := sb.String()
-	return result
-}
-
-func main() {
-	// Test cases
-	fmt.Println(mergeAlternately("abc", "pqr")) // apbqcr
-	fmt.Println(mergeAlternately("ab", "pqrs")) // apbqrs
-}
-
+//https://leetcode.com/problems/merge-strings-alternately/description/?envType=study-plan-v2&envId=leetcode-75
+//
 //You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.
 //
 //Return the merged string.
@@ -58,3 +30,13 @@ func main() {
 //word1:  a   b   c   d
 //word2:    p   q
 //merged: a p b q c   d
+//
+//
+//Constraints:
+//
+//1 <= word1.length, word2.length <= 100
+//word1 and word2 consist of lowercase English letters.
+
+func mergeAlternately(word1 string, word2 string) string {
+	return ""
+}
