@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"strings"
+
+	"github.com/LlamaUnicorn/leetcode-go/patterns/two_pointer"
 )
 
 func mergeAlternately(word1 string, word2 string) string {
@@ -24,11 +26,11 @@ func mergeAlternately(word1 string, word2 string) string {
 	return result
 }
 
-func main() {
-	// Test cases
-	fmt.Println(mergeAlternately("abc", "pqr")) // apbqcr
-	fmt.Println(mergeAlternately("ab", "pqrs")) // apbqrs
-}
+//func main() {
+//	// Test cases
+//	fmt.Println(mergeAlternately("abc", "pqr")) // apbqcr
+//	fmt.Println(mergeAlternately("ab", "pqrs")) // apbqrs
+//}
 
 //You are given two strings word1 and word2. Merge the strings by adding letters in alternating order, starting with word1. If a string is longer than the other, append the additional letters onto the end of the merged string.
 //
@@ -58,3 +60,32 @@ func main() {
 //word1:  a   b   c   d
 //word2:    p   q
 //merged: a p b q c   d
+
+func main() {
+	// Test Example 1: Two Sum
+	nums1 := []int{2, 7, 11, 15}
+	idx1, idx2 := two_pointer.TwoSumSorted(nums1, 9)
+	if idx1 != -1 {
+		fmt.Printf("Two Sum: indices [%d, %d] -> values [%d, %d]\n",
+			idx1, idx2, nums1[idx1], nums1[idx2])
+	}
+
+	// Test Example 2: Palindrome
+	fmt.Printf("Is 'racecar' palindrome? %v\n", two_pointer.IsPalindrome("racecar"))
+	fmt.Printf("Is 'hello' palindrome? %v\n", two_pointer.IsPalindrome("hello"))
+
+	// Test Example 3: Remove Duplicates
+	nums2 := []int{1, 1, 2, 2, 3, 4, 4, 5}
+	length := two_pointer.RemoveDuplicates(nums2)
+	fmt.Printf("Array after removing duplicates: %v (length: %d)\n",
+		nums2[:length], length)
+
+	// Test Example 4: Container With Most Water
+	heights := []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
+	fmt.Printf("Max water area: %d\n", two_pointer.MaxArea(heights))
+
+	// Test Example 5: Three Sum
+	nums3 := []int{-1, 0, 1, 2, -1, -4}
+	triplets := two_pointer.ThreeSum(nums3)
+	fmt.Printf("Triplets that sum to 0: %v\n", triplets)
+}
