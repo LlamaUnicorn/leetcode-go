@@ -61,10 +61,29 @@ func mergeAlternately(word1 string, word2 string) string {
 //word2:    p   q
 //merged: a p b q c   d
 
+func twoSumSorted(num1 []int, target int) (int, int) {
+	left := 0
+	right := len(num1) - 1
+
+	for left < right {
+		sum := num1[left] + num1[right]
+
+		if sum == target {
+			return left, right
+		} else if sum < target {
+			left++
+		} else {
+			right--
+		}
+	}
+	return -1, -1
+}
+
 func main() {
 	// Test Example 1: Two Sum
 	nums1 := []int{2, 7, 11, 15}
-	idx1, idx2 := two_pointer.TwoSumSorted(nums1, 9)
+	//idx1, idx2 := two_pointer.TwoSumSorted(nums1, 9)
+	idx1, idx2 := twoSumSorted(nums1, 9)
 	if idx1 != -1 {
 		fmt.Printf("Two Sum: indices [%d, %d] -> values [%d, %d]\n",
 			idx1, idx2, nums1[idx1], nums1[idx2])

@@ -2,7 +2,7 @@ package two_pointer
 
 import "fmt"
 
-// Example 1: Two Sum in Sorted Array
+// TwoSumSorted Example 1: Two Sum in Sorted Array
 // Given a sorted array, find two numbers that add up to a target sum
 // Time: O(n), Space: O(1)
 func TwoSumSorted(nums []int, target int) (int, int) {
@@ -24,7 +24,7 @@ func TwoSumSorted(nums []int, target int) (int, int) {
 	return -1, -1 // No valid pair found
 }
 
-// Example 2: Check if String is Palindrome
+// IsPalindrome Example 2: Check if String is Palindrome
 // Use two pointers from both ends moving towards center
 // Time: O(n), Space: O(1)
 func IsPalindrome(s string) bool {
@@ -42,7 +42,7 @@ func IsPalindrome(s string) bool {
 	return true
 }
 
-// Example 3: Remove Duplicates from Sorted Array (in-place)
+// RemoveDuplicates Example 3: Remove Duplicates from Sorted Array (in-place)
 // Use slow and fast pointers
 // Time: O(n), Space: O(1)
 func RemoveDuplicates(nums []int) int {
@@ -64,7 +64,7 @@ func RemoveDuplicates(nums []int) int {
 	return slow + 1 // Length of array with unique elements
 }
 
-// Example 4: Container With Most Water
+// MaxArea Example 4: Container With Most Water
 // Classic two-pointer problem from LeetCode
 // Time: O(n), Space: O(1)
 func MaxArea(height []int) int {
@@ -91,7 +91,7 @@ func MaxArea(height []int) int {
 	return maxWater
 }
 
-// Example 5: Three Sum (finding triplets that sum to zero)
+// ThreeSum Example 5: Three Sum (finding triplets that sum to zero)
 // Combines sorting with two-pointer technique
 // Time: O(n²), Space: O(1) excluding the output
 func ThreeSum(nums []int) [][]int {
