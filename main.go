@@ -61,14 +61,14 @@ func mergeAlternately(word1 string, word2 string) string {
 //word2:    p   q
 //merged: a p b q c   d
 
-func twoSumSorted(num1 []int, target int) (int, int) {
+func twoSumSorted(nums []int, target int) (int, int) {
 	left := 0
-	right := len(num1) - 1
+	right := len(nums) - 1
 
 	for left < right {
-		sum := num1[left] + num1[right]
+		sum := nums[left] + nums[right]
 
-		if sum == target {
+		if target == sum {
 			return left, right
 		} else if sum < target {
 			left++
