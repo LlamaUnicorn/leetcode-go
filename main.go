@@ -68,7 +68,7 @@ func twoSumSorted(nums []int, target int) (int, int) {
 	for left < right {
 		sum := nums[left] + nums[right]
 
-		if target == sum {
+		if sum == target {
 			return left, right
 		} else if sum < target {
 			left++
