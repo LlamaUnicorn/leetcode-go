@@ -79,6 +79,20 @@ func twoSumSorted(nums []int, target int) (int, int) {
 	return -1, -1
 }
 
+func IsPalindrome(s string) bool {
+	left := 0
+	right := len(s) - 1
+
+	for left < right {
+		if s[left] != s[right] {
+			return false
+		}
+		left++
+		right--
+	}
+	return true
+}
+
 func main() {
 	// Test Example 1: Two Sum
 	nums1 := []int{2, 7, 11, 15}
@@ -90,8 +104,8 @@ func main() {
 	}
 
 	// Test Example 2: Palindrome
-	fmt.Printf("Is 'racecar' palindrome? %v\n", two_pointer.IsPalindrome("racecar"))
-	fmt.Printf("Is 'hello' palindrome? %v\n", two_pointer.IsPalindrome("hello"))
+	fmt.Printf("Is 'racecar' palindrome? %v\n", IsPalindrome("racecar"))
+	fmt.Printf("Is 'hello' palindrome? %v\n", IsPalindrome("hello"))
 
 	// Test Example 3: Remove Duplicates
 	nums2 := []int{1, 1, 2, 2, 3, 4, 4, 5}
