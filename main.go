@@ -93,6 +93,22 @@ func IsPalindrome(s string) bool {
 	return true
 }
 
+func RemoveDuplicates(nums []int) int {
+	if len(nums) <= 1 {
+		return len(nums)
+	}
+
+	slow := 0
+
+	for fast := 1; fast < len(nums); fast++ {
+		if nums[fast] != nums[slow] {
+			slow++
+			nums[slow] = nums[fast]
+		}
+	}
+	return slow + 1
+}
+
 func main() {
 	// Test Example 1: Two Sum
 	nums1 := []int{2, 7, 11, 15}
@@ -109,7 +125,7 @@ func main() {
 
 	// Test Example 3: Remove Duplicates
 	nums2 := []int{1, 1, 2, 2, 3, 4, 4, 5}
-	length := two_pointer.RemoveDuplicates(nums2)
+	length := RemoveDuplicates(nums2)
 	fmt.Printf("Array after removing duplicates: %v (length: %d)\n",
 		nums2[:length], length)
 
