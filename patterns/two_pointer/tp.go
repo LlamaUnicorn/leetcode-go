@@ -164,7 +164,7 @@ func max(a, b int) int {
 	return b
 }
 
-func main() {
+func Run2Pointers() {
 	// Test Example 1: Two Sum
 	nums1 := []int{2, 7, 11, 15}
 	idx1, idx2 := TwoSumSorted(nums1, 9)
