@@ -38,7 +38,6 @@ func IsPalindrome(s string) bool {
 		left++
 		right--
 	}
-	fmt.Println("I updated this")
 	return true
 }
 
