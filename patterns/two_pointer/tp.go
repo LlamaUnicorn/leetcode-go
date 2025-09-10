@@ -60,8 +60,8 @@ func RemoveDuplicates(nums []int) int {
 			nums[slow] = nums[fast]
 		}
 	}
-
-	return slow + 1 // Length of array with unique elements
+	// Length of array with unique elements
+	return slow + 1
 }
 
 // MaxArea Example 4: Container With Most Water
@@ -75,10 +75,10 @@ func MaxArea(height []int) int {
 	for left < right {
 		// Calculate current area
 		width := right - left
-		minHeight := min(height[left], height[right])
+		minHeight := minFunc(height[left], height[right])
 		currentArea := width * minHeight
 
-		maxWater = max(maxWater, currentArea)
+		maxWater = maxFunc(maxWater, currentArea)
 
 		// Move the pointer pointing to the shorter line
 		if height[left] < height[right] {
@@ -150,14 +150,14 @@ func ThreeSum(nums []int) [][]int {
 }
 
 // Helper functions
-func min(a, b int) int {
+func minFunc(a, b int) int {
 	if a < b {
 		return a
 	}
 	return b
 }
 
-func max(a, b int) int {
+func maxFunc(a, b int) int {
 	if a > b {
 		return a
 	}
