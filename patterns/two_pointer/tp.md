@@ -1,4 +1,5 @@
  # Key Concepts of Two-Pointer Pattern:
+ remove this line
 
 * Opposite Direction (Examples 1, 2, 4): Start pointers at both ends and move them toward each other based on some condition.
 * Same Direction / Fast-Slow (Example 3): Both pointers move in the same direction but at different speeds. Often used for in-place operations.
