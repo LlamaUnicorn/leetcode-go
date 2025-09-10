@@ -47,7 +47,7 @@ func IsPalindrome(s string) bool {
 // Time: O(n), Space: O(1)
 func RemoveDuplicates(nums []int) int {
 	if len(nums) <= 1 {
-		return len(nums)
+		return len(nums) // whatever
 	}
 
 	// Slow pointer tracks position for next unique element
