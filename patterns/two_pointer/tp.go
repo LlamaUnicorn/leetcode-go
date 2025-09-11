@@ -27,6 +27,7 @@ func TwoSumSorted(nums []int, target int) (int, int) {
 // IsPalindrome Example 2: Check if String is Palindrome
 // Use two pointers from both ends moving towards center
 // Time: O(n), Space: O(1)
+
 func IsPalindrome(s string) bool {
 	left := 0
 	right := len(s) - 1
