@@ -17,15 +17,15 @@ func TwoSumSorted(nums []int, target int) (int, int) {
 		sum := nums[left] + nums[right]
 
 		if sum == target {
-			return left, right // Found the pair
+			return left, right
 		} else if sum < target {
-			left++ // Need a larger sum, move left pointer right
+			left++
 		} else {
-			right-- // Need a smaller sum, move right pointer left
+			right--
 		}
 	}
 
-	return -1, -1 // No valid pair found
+	return -1, -1
 }
 
 // IsPalindrome Example 2: Check if String is Palindrome
