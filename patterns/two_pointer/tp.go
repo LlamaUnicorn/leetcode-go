@@ -1,6 +1,10 @@
 package two_pointer
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"reflect"
+)
 
 // TwoSumSorted Example 1: Two Sum in Sorted Array
 // Given a sorted array, find two numbers that add up to a target sum
@@ -172,6 +176,9 @@ func Run2Pointers() {
 		fmt.Printf("Two Sum: indices [%d, %d] -> values [%d, %d]\n",
 			idx1, idx2, nums1[idx1], nums1[idx2])
 	}
+	if idx1 != 0 && idx2 != 1 {
+		log.Fatalf("Expected 0, 1 got %+v, %+v", idx1, idx2)
+	}
 
 	// Test Example 2: Palindrome
 	fmt.Printf("Is 'racecar' palindrome? %v\n", IsPalindrome("racecar"))
@@ -183,9 +190,16 @@ func Run2Pointers() {
 	fmt.Printf("Array after removing duplicates: %v (length: %d)\n",
 		nums2[:length], length)
 
+	if !reflect.DeepEqual(nums2[:length], []int{1, 2, 3, 4, 5}) {
+		log.Fatalf("expected [1, 2, 3, 4, 5], got %+v", nums2[:length])
+	}
 	// Test Example 4: Container With Most Water
 	heights := []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
 	fmt.Printf("Max water area: %d\n", MaxArea(heights))
+	maxWaterResult := MaxArea(heights)
+	if maxWaterResult != 49 {
+		log.Fatalf("Expected 49, got %+v", maxWaterResult)
+	}
 
 	// Test Example 5: Three Sum
 	nums3 := []int{-1, 0, 1, 2, -1, -4}
