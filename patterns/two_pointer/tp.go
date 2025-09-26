@@ -101,7 +101,6 @@ func MaxArea(height []int) int {
 func ThreeSum(nums []int) [][]int {
 	result := [][]int{}
 	n := len(nums)
-
 	if n < 3 {
 		return result
 	}
