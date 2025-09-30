@@ -1,9 +1,7 @@
 package main
 
-import (
-	"github.com/LlamaUnicorn/leetcode-go/patterns/two_pointer"
-)
+import "github.com/LlamaUnicorn/leetcode-go/string/s1768"
 
 func main() {
-	two_pointer.Run2Pointers()
+	s1768.Run1768()
 }

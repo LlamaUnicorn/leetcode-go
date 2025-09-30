@@ -38,7 +38,18 @@
 
 package s1768
 
-func Run1768(word1 string, word2 string) string {
+import "log"
+
+func mergeStrings(word1 string, word2 string) string {
 	// pointer i
-	return ""
+	return word1 + word2
+}
+
+func Run1768() {
+	word1, word2 := "abc", "pqr"
+	result := mergeStrings(word1, word2)
+	expected := "apbqcr"
+	if expected != result {
+		log.Fatalf("Expected %+v == %+v", expected, result)
+	}
 }
