@@ -38,11 +38,29 @@
 
 package s1768
 
-import "log"
+import (
+	"fmt"
+	"log"
+)
 
 func mergeStrings(word1 string, word2 string) string {
 	// pointer i
-	return word1 + word2
+	i, j := 0, 0
+	result := []byte{}
+	for i < len(word1) && j < len(word2) {
+		result = append(result, word1[i])
+		result = append(result, word2[j])
+		i++
+		j++
+	}
+
+	if i < len(word1) {
+		result = append(result, word1[i])
+	}
+	if j < len(word2) {
+		result = append(result, word2[j])
+	}
+	return string(result)
 }
 
 func Run1768() {
@@ -50,6 +68,8 @@ func Run1768() {
 	result := mergeStrings(word1, word2)
 	expected := "apbqcr"
 	if expected != result {
-		log.Fatalf("Expected %+v == %+v", expected, result)
+		log.Fatalf("Error! Expected %+v == %+v", expected, result)
 	}
+	fmt.Printf("Expected %+v, got %+v \n", expected, result)
+	fmt.Println(expected == result)
 }
