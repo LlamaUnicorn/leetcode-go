@@ -43,7 +43,7 @@ import (
 	"log"
 )
 
-// mergeStrings loops over existing string chars
+// mergeStrings loops over string chars
 // until one of the strings ends.
 // then it adds extra char from longer word that still has chars.
 // Might be a bug for different length words. Indeed a bug.
@@ -58,10 +58,16 @@ func mergeStrings(word1 string, word2 string) string {
 	}
 
 	if i < len(word1) {
-		result = append(result, word1[i])
+		for i < len(word1) {
+			result = append(result, word1[i])
+			i++
+		}
 	}
 	if j < len(word2) {
-		result = append(result, word2[j])
+		for j < len(word2) {
+			result = append(result, word2[j])
+			j++
+		}
 	}
 	return string(result)
 }
