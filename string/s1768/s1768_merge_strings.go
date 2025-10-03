@@ -43,8 +43,11 @@ import (
 	"log"
 )
 
+// mergeStrings loops over existing string chars
+// until one of the strings ends.
+// then it adds extra char from longer word that still has chars.
+// Might be a bug for different length words. Indeed a bug.
 func mergeStrings(word1 string, word2 string) string {
-	// pointer i
 	i, j := 0, 0
 	result := []byte{}
 	for i < len(word1) && j < len(word2) {
@@ -69,6 +72,15 @@ func Run1768() {
 	expected := "apbqcr"
 	if expected != result {
 		log.Fatalf("Error! Expected %+v == %+v", expected, result)
+	}
+	fmt.Printf("Expected %+v, got %+v \n", expected, result)
+	fmt.Println(expected == result)
+
+	word3, word4 := "ab", "pqrs"
+	result = mergeStrings(word3, word4)
+	expected = "apbqrs"
+	if expected != result {
+		log.Fatalf("Error 2: Expected %+v == %+v", expected, result)
 	}
 	fmt.Printf("Expected %+v, got %+v \n", expected, result)
 	fmt.Println(expected == result)
